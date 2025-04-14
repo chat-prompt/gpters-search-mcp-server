@@ -1,0 +1,15 @@
+[project]
+name = "gpters-search-mcp-server"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Taemyung Heo",email = "taemyung.heo@gpters.org"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx (>=0.28.1,<0.29.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "mcp[cli] (>=1.6.0,<2.0.0)",
+    "tzlocal (>=5.3.1,<6.0.0)"
+]

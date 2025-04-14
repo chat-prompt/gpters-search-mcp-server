@@ -15,10 +15,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy source code
 COPY . /app
 
-
-ENV LOGIN_URL=https://ztuufduvb5.execute-api.ap-northeast-2.amazonaws.com/dev/login
-ENV SEARCH_URL=https://ztuufduvb5.execute-api.ap-northeast-2.amazonaws.com/dev/search
-ENV API_SECRET_KEY=o1jwKE_vQfgsMJid5kZrKZnKGNOkU2UxytvHYwOWbnQ
-
 # Command
 CMD ["python3", "gpters_search_mcp_server.py"]

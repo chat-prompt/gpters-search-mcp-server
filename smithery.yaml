@@ -10,5 +10,10 @@ startCommand:
     |-
     (config) => ({
       command: 'python3',
-      args: ['gpters_search_mcp_server.py']
+      args: ['gpters_search_mcp_server.py'],
+      env: {
+        LOGIN_URL: https://ztuufduvb5.execute-api.ap-northeast-2.amazonaws.com/dev/login,
+        SEARCH_URL: https://ztuufduvb5.execute-api.ap-northeast-2.amazonaws.com/dev/search,
+        API_SECRET_KEY: o1jwKE_vQfgsMJid5kZrKZnKGNOkU2UxytvHYwOWbnQ
+      }
     })

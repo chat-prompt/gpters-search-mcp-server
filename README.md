@@ -27,16 +27,18 @@ GPTers Search MCP Server는 GPTers AI 스터디 커뮤니티의 지식을 검색
 
 [Smithery](https://smithery.ai/server/@chat-prompt/gpters-search-mcp-server)를 통해 GPTers Search MCP 서버를 자동으로 설치하려면 AI 클라이언트에 따라 다음 명령 중 하나를 사용하세요:
 
+> **Note**: API 키는 GPTers 커뮤니티 관리자에게 요청하여 발급받을 수 있습니다.
+
 Claude Desktop:
 
 ```bash
-npx -y @smithery/cli@latest install @chat-prompt/gpters-search-mcp-server --client claude
+npx -y @smithery/cli@latest install @chat-prompt/gpters-search-mcp-server --client claude --config '"{\"apiSecretKey\":\"your_api_key\"}"'
 ```
 
 Cursor:
 
 ```bash
-npx -y @smithery/cli@latest install @chat-prompt/gpters-search-mcp-server --client cursor
+npx -y @smithery/cli@latest install @chat-prompt/gpters-search-mcp-server --client cursor --config '"{\"apiSecretKey\":\"your_api_key\"}"'
 ```
 
 ## 사용 예제

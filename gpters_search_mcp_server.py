@@ -30,9 +30,9 @@ logger = logging.getLogger("gpters-search-mcp")
 # 특정 이름으로 FastMCP 서버를 초기화합니다.
 mcp = FastMCP("gpters-search-mcp")
 
-# 환경 변수에서 Lambda 로그인 및 검색 엔드포인트 URL을 설정합니다.
-LAMBDA_LOGIN_URL = os.getenv("LOGIN_URL")
-LAMBDA_SEARCH_URL = os.getenv("SEARCH_URL")
+# 환경 변수에서 로그인 및 검색 엔드포인트 URL을 설정합니다.
+LOGIN_URL = os.getenv("LOGIN_URL")
+SEARCH_URL = os.getenv("SEARCH_URL")
 API_SECRET_KEY = os.getenv("API_SECRET_KEY")
 
 # JWT 토큰 캐시
@@ -61,7 +61,7 @@ async def get_jwt_token() -> str:
         async with httpx.AsyncClient() as client:
             # API 키를 사용하여 로그인 URL로 POST 요청을 보냅니다.
             response = await client.post(
-                LAMBDA_LOGIN_URL,
+                LOGIN_URL,
                 headers={"x-api-key": API_SECRET_KEY},
                 timeout=10.0
             )
@@ -122,7 +122,7 @@ async def search_gpters(query: str, top_k: int = 5, space_name: str = None, owne
         async with httpx.AsyncClient() as client:
             # 쿼리와 토큰을 사용하여 검색 URL로 POST 요청을 보냅니다.
             response = await client.post(
-                LAMBDA_SEARCH_URL,
+                SEARCH_URL,
                 json={"query": query, "top_k": top_k, "space_name": space_name, "owner_name": owner_name, "created_within_days": created_within_days},
                 headers={
                     "x-api-key": API_SECRET_KEY,
